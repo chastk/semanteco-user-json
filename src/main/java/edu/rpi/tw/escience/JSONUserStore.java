@@ -62,12 +62,16 @@ public class JSONUserStore implements UserStore{
 			user.setPreferences((HashMap<String,Object>)obj.get("preferences"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+			return null;
 		} catch (IOException e) {
 			e.printStackTrace();
+			return null;
 		} catch (ParseException e) {
 			e.printStackTrace();
+			return null;
 		} catch (JSONException e) {
 			e.printStackTrace();
+			return null;
 		}
 		return user;
 	}// /readUser
